@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 var gameID;
 
 function streamAjax() {
-=======
-// $("#submit").on("click", function(){
-//     event.preventDefault();
->>>>>>> master
     
     $.ajax({
         type: 'GET',
@@ -21,15 +16,13 @@ function streamAjax() {
 
 
 
+//end functions=====================================================================================
 
 
 
-
-
-//  $("#submit").on("click", function(){
-//      event.preventDefault();
+ $("#submit").on("click", function(){
+     event.preventDefault();
     
-
     $.ajax({
         type: 'GET',
         url: 'https://api.twitch.tv/helix/games/top',
@@ -46,7 +39,6 @@ function streamAjax() {
        
        //Build url with search option-------------------------------------------------
    
-<<<<<<< HEAD
       $.ajax({
          type: 'GET',
          url: 'https://api.twitch.tv/kraken/search/games?query=call%20of%20duty',
@@ -62,30 +54,19 @@ function streamAjax() {
         
          }
     });
+
     
     
     
-      //build url with search option-----------------------------------------------------
+      
     
     
- 
-=======
- $.ajax({
-    type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams/game_id=' + gameID + 'limit=5',
-    headers: {
-      'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
-    },
-    success: function(data) {
-      console.log(data);
-    }
-   });
 
 
 
 
-$("#submit").on("click", function(event) {
-    event.preventDefault();
+// $("#submit").on("click", function(event) {
+//     event.preventDefault();
     var userinput = $("#search").val().trim();
     console.log(userinput);
     $("#search").val("");
@@ -114,5 +95,5 @@ $.ajax({
     $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
     $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
 }
+
 });
->>>>>>> master
