@@ -57,24 +57,25 @@ function streamAjaxButtons(gameid) {
           var image5id = data.data[4].id;
           var image6 = JSON.stringify(data.data[5].box_art_url);
           var image6id = data.data[5].id;
-          var str = image1;
-          var newstr = str.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          
+          var newstr = image1.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
-          var str2 = image2;
-          var newstr2 = str2.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          
+          var newstr2 = image2.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
-          var str3 = image3;
-          var newstr3 = str3.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+         
+          var newstr3 = image3.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
-          var str4 = image4;
-          var newstr4 = str4.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          
+          var newstr4 = image4.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
-          var str5 = image5;
-          var newstr5 = str5.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          
+          var newstr5 = image5.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
-          var str6 = image6;
-          var newstr6 = str6.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+      
+          var newstr6 = image6.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
+          //append the game box art to the grid on index.html----------------------------------------------------------------------------
 
           $("#gameimage1").attr("src", newstr);
           $("#gameimage2").attr("src", newstr2);
@@ -83,10 +84,39 @@ function streamAjaxButtons(gameid) {
           $("#gameimage5").attr("src", newstr5);
           $("#gameimage6").attr("src", newstr6);
 
+          //When the images are clicked, use an ajax call to get the info for that game---------------------------------------------------
+
           $("#game1").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image1id);
-          })
+          });
+
+          $("#game2").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image2id);
+          });
+
+          $("#game3").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image3id);
+          });
+
+          $("#game4").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image4id);
+          });
+
+          $("#game5").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image5id);
+          });
+
+          $("#game6").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image6id);
+          });
+
+
         }
        });
    
