@@ -14,13 +14,26 @@ function streamAjax() {
        });
 }
 
+function streamAjaxButtons(gameid) {
+  $.ajax({
+        type: 'GET',
+        url: 'https://api.twitch.tv/helix/streams?game_id=' + gameid + '',
+        headers: {
+          'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
+        },
+        success: function(data) {
+          console.log(data);
+        }
+       });
+}
+
 
 
 //end functions=====================================================================================
 
 
 
- 
+  //popular twitch games load on page load----------------------------------------------------------
      
     
     $.ajax({
@@ -31,12 +44,19 @@ function streamAjax() {
           'Accept': 'application/vnd.twitchtv.v5+json'
         },
         success: function(data) {
+          console.log(data);
           var image1 = JSON.stringify(data.data[0].box_art_url);
+          var image1id = data.data[0].id;
           var image2 = JSON.stringify(data.data[1].box_art_url);
+          var image2id = data.data[1].id;
           var image3 = JSON.stringify(data.data[2].box_art_url);
+          var image3id = data.data[2].id;
           var image4 = JSON.stringify(data.data[3].box_art_url);
+          var image4id = data.data[3].id;
           var image5 = JSON.stringify(data.data[4].box_art_url);
+          var image5id = data.data[4].id;
           var image6 = JSON.stringify(data.data[5].box_art_url);
+          var image6id = data.data[5].id;
           var str = image1;
           var newstr = str.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
@@ -63,12 +83,10 @@ function streamAjax() {
           $("#gameimage5").attr("src", newstr5);
           $("#gameimage6").attr("src", newstr6);
 
-          // var gameimage = data.data[0].box_art_url;
-          
-          
-          
-
-           
+          $("#game1").on("click", function() {
+            event.preventDefault();
+            streamAjaxButtons(image1id);
+          })
         }
        });
    
