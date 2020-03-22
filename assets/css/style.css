@@ -1,4 +1,19 @@
 body {
-    background-image: url("images/project1.2.jpg");
+    /* background-image: url("../images/project1.2.jpg"); */
     background-size: 100%;
+}
+
+.gameGrid {
+    margin-top: 20px;
+    background-color: white;
+}
+
+.gameImage {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+#top-games-header {
+    margin-left: 13px;
 }
