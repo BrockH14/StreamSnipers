@@ -32,6 +32,9 @@ function streamAjax() {
         },
         success: function(data) {
           console.log(data);
+          
+
+           
         }
        });
    
@@ -48,14 +51,30 @@ function streamAjax() {
          },
          success: function(data) {
            gameID = data.games[0]._id;
+           gameImage1 = data.games[0].box.large;
+           gameImage2 = data.games[1].box.large;
+           gameImage3 = data.games[2].box.large;
+           gameImage4 = data.games[3].box.large;
+           gameImage5 = data.games[4].box.large;
+           gameImage6 = data.games[5].box.large;
+           console.log(gameImage1);
            console.log(gameID);
            console.log(data);
            streamAjax();
+
+           $("#gameimage1").attr("src", gameImage1);
+           $("#gameimage2").attr("src", gameImage2);
+           $("#gameimage3").attr("src", gameImage3);
+           $("#gameimage4").attr("src", gameImage4);
+           $("#gameimage5").attr("src", gameImage5);
+           $("#gameimage6").attr("src", gameImage6);
         
          }
     });
+ });
 
 
+   
     
     
     
@@ -63,38 +82,38 @@ function streamAjax() {
     
     
 
-
+// youtube--------------------------------------------------------------------------------------------------------
 
 
 // $("#submit").on("click", function(event) {
 //     event.preventDefault();
-    var userinput = $("#search").val().trim();
-    console.log(userinput);
-    $("#search").val("");
-$.ajax({
-    type: 'GET',
-    url: 'https://www.googleapis.com/youtube/v3/search',
-    data: {
-        key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
-        q: userinput,
-        part: 'snippet',
-        maxResults: 3,
-        type: 'video',
-        videoEmbeddable: true,
-    },
-    success: function(data){
-        console.log(data);
-        embedVideo(data);
-    },
-    error: function(response){
-        console.log("Request Failed");
-    }
+//     var userinput = $("#search").val().trim();
+//     console.log(userinput);
+//     $("#search").val("");
+// $.ajax({
+//     type: 'GET',
+//     url: 'https://www.googleapis.com/youtube/v3/search',
+//     data: {
+//         key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
+//         q: userinput,
+//         part: 'snippet',
+//         maxResults: 3,
+//         type: 'video',
+//         videoEmbeddable: true,
+//     },
+//     success: function(data){
+//         console.log(data);
+//         embedVideo(data);
+//     },
+//     error: function(response){
+//         console.log("Request Failed");
+//     }
     
-  });
-  function embedVideo(data) {
-    $('#slide1').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
-    $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
-    $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
-}
+//   });
+//   function embedVideo(data) {
+//     $('#slide1').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+//     $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
+//     $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
+// }
 
-});
+// });
