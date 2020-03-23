@@ -37,13 +37,13 @@
             <nav class="navbar navbar-inverse bg-light">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" id="header2">Search for your favorite game!</a>
+                        <a class="navbar-brand" id="header2">Get right into the action and look up your game of choice!</a>
                     </div>
                     <form class="navbar-form navbar-left" action="/action_page.php">
                         <div class="form-group">
                             <input type="text" id="search" class="form-control" placeholder="Search">
+                            <button type="submit" id="submit" class="btn btn-default">Submit</button>
                         </div>
-                        <button type="submit" id="submit" class="btn btn-default">Submit</button>
                     </form>
                 </div>
             </nav>
@@ -55,18 +55,27 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Twitch Streamers</h3>
+                          
                         </div>
                         <div class="panel-body">
                             <table class="table table-hover" id="t-table">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">Twitch Streamers</th>
-                                        <th class="text-center">Game</th>
-                                        <th class="text-center">Active</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="train-table-rows"></tbody>
+                                <tr>
+                                    <td a href="https://www.twitch.tv/nickmercs"><img src="assets/images/test4.jpg" style="width: 38%;" id="stream1">
+                                        <p class= "text-right">NickMercs</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td a href="test4.jpg"><img src="assets/images/test5.jpg" style="width: 38%;" id="stream1">
+                                        <p class= "text-right">Nic Mercs</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td a href="test4.jpg"><img src="assets/images/test3.jpg" style="width: 38%;" id="stream1">
+                                        <p class= "text-right">Streamer 3</p>
+                                    </td>
+                                </tr>
+                                
+                                <tbody id="twitch-table-rows"></tbody>
                             </table>
                         </div>
                     </div>
