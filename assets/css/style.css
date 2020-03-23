@@ -17,3 +17,18 @@ body {
 #top-games-header {
     margin-left: 13px;
 }
+
+#t-table {
+    border: 1px solid black;
+}
+
+.stream-thumbnail {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    
+}
+
+.streamer-name {
+    color: black;
+}
