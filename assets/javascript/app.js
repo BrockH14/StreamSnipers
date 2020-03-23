@@ -235,12 +235,9 @@ function streamAjaxButtons(gameid) {
            console.log(data);
            streamAjax();
 
-           $("#gameimage1").attr("src", gameImage1);
-           $("#gameimage2").attr("src", gameImage2);
-           $("#gameimage3").attr("src", gameImage3);
-           $("#gameimage4").attr("src", gameImage4);
-           $("#gameimage5").attr("src", gameImage5);
-           $("#gameimage6").attr("src", gameImage6);
+           
+
+           
         
          }
     });
