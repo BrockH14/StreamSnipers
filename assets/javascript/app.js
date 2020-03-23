@@ -85,6 +85,14 @@ function streamAjaxButtons(gameid) {
         },
         success: function(data) {
           console.log(data);
+
+          var youtop1 = data.data[0].name;
+          var youtop2 = data.data[1].name;
+          var youtop3 = data.data[2].name;
+          var youtop4 = data.data[3].name;
+          var youtop5 = data.data[4].name;
+          var youtop6 = data.data[5].name;
+
           var image1 = JSON.stringify(data.data[0].box_art_url);
           var image1id = data.data[0].id;
           var image2 = JSON.stringify(data.data[1].box_art_url);
@@ -99,19 +107,14 @@ function streamAjaxButtons(gameid) {
           var image6id = data.data[5].id;
           
           var newstr = image1.replace("{width}", "200").replace("{height}", "300").replace('"', "");
-
           
           var newstr2 = image2.replace("{width}", "200").replace("{height}", "300").replace('"', "");
-
          
           var newstr3 = image3.replace("{width}", "200").replace("{height}", "300").replace('"', "");
-
           
           var newstr4 = image4.replace("{width}", "200").replace("{height}", "300").replace('"', "");
-
           
           var newstr5 = image5.replace("{width}", "200").replace("{height}", "300").replace('"', "");
-
       
           var newstr6 = image6.replace("{width}", "200").replace("{height}", "300").replace('"', "");
 
@@ -129,39 +132,69 @@ function streamAjaxButtons(gameid) {
           $("#game1").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image1id);
+            userinput = streamAjaxButtons(youtop1);
             console.log(image1id);
           });
 
           $("#game2").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image2id);
+            userinput = streamAjaxButtons(youtop2);
           });
 
           $("#game3").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image3id);
+            userinput = streamAjaxButtons(youtop3);
           });
 
           $("#game4").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image4id);
+            userinput = streamAjaxButtons(youtop4);
           });
 
           $("#game5").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image5id);
+            userinput = streamAjaxButtons(youtop5);
           });
 
           $("#game6").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image6id);
-          });
+            userinput = streamAjaxButtons(youtop6);
 
+          });
+          $.ajax({
+            type: 'GET',
+            url: 'https://www.googleapis.com/youtube/v3/search',
+            data: {
+                key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
+                q: userinput,
+                part: 'snippet',
+                maxResults: 3,
+                type: 'video',
+                videoEmbeddable: true,
+            },
+            success: function(data){
+                console.log(data);
+                embedVideo(data);
+            },
+            error: function(response){
+                console.log("Request Failed");
+            }
+            
+          });
+          function embedVideo(data) {
+            $('#slide1').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+            $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
+            $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
+        }
 
         }
        });
    
-
        //Get top 3 most active streams on twitch for stream grid pre-user-search----------------------------------------------------
 
 
@@ -234,56 +267,41 @@ function streamAjaxButtons(gameid) {
            console.log(gameID);
            console.log(data);
            streamAjax();
-
-           
-
-           
-        
          }
     });
  });
 
-
-   
-    
-    
-    
-      
-    
-    
-
 // youtube--------------------------------------------------------------------------------------------------------
 
-
-// $("#submit").on("click", function(event) {
-//     event.preventDefault();
-//     var userinput = $("#search").val().trim();
-//     console.log(userinput);
-//     $("#search").val("");
-// $.ajax({
-//     type: 'GET',
-//     url: 'https://www.googleapis.com/youtube/v3/search',
-//     data: {
-//         key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
-//         q: userinput,
-//         part: 'snippet',
-//         maxResults: 3,
-//         type: 'video',
-//         videoEmbeddable: true,
-//     },
-//     success: function(data){
-//         console.log(data);
-//         embedVideo(data);
-//     },
-//     error: function(response){
-//         console.log("Request Failed");
-//     }
+$("#submit").on("click", function(event) {
+    event.preventDefault();
+    var userinput = $("#search").val().trim();
+    console.log(userinput);
+    $("#search").val("");
+$.ajax({
+    type: 'GET',
+    url: 'https://www.googleapis.com/youtube/v3/search',
+    data: {
+        key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
+        q: userinput,
+        part: 'snippet',
+        maxResults: 3,
+        type: 'video',
+        videoEmbeddable: true,
+    },
+    success: function(data){
+        console.log(data);
+        embedVideo(data);
+    },
+    error: function(response){
+        console.log("Request Failed");
+    }
     
-//   });
-//   function embedVideo(data) {
-//     $('#slide1').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
-//     $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
-//     $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
-// }
+  });
+  function embedVideo(data) {
+    $('#slide1').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+    $('#slide2').attr('src', 'https://www.youtube.com/embed/' + data.items[1].id.videoId)
+    $('#slide3').attr('src', 'https://www.youtube.com/embed/' + data.items[2].id.videoId)
+}
 
-// });
+});
