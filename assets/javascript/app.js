@@ -1,5 +1,7 @@
 var gameID;
 
+
+
 function streamAjax() {
     
     $.ajax({
@@ -23,11 +25,49 @@ function streamAjaxButtons(gameid) {
         },
         success: function(data) {
           console.log(data);
+          
+          var streamerThumbnail1 = data.data[0].thumbnail_url;
+          var streamerThumbnail2 = data.data[1].thumbnail_url;
+          var streamerThumbnail3 = data.data[2].thumbnail_url;
+
+          var streamTitle1 = data.data[0].title;
+          var streamTitle2 = data.data[1].title;
+          var streamTitle3 = data.data[2].title;
+
+          var streamerName1 = data.data[0].user_name;
+          var streamerName2 = data.data[1].user_name;
+          var streamerName3 = data.data[2].user_name;
+
+          var thumbnail1 = streamerThumbnail1.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          var thumbnail2 = streamerThumbnail2.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+          var thumbnail3 = streamerThumbnail3.replace("{width}", "200").replace("{height}", "300").replace('"', "");
+
+          $("#streamer-thumbnail1").attr("src", thumbnail1);
+          $("#streamer-thumbnail2").attr("src", thumbnail2);
+          $("#streamer-thumbnail3").attr("src", thumbnail3);
+
+          $("#stream-title1").text(streamTitle1);
+          $("#stream-title2").text(streamTitle2);
+          $("#stream-title3").text(streamTitle3);
+
+          $("#streamer-name1").text(streamerName1);
+          $("#streamer-name2").text(streamerName2);
+          $("#streamer-name3").text(streamerName3);
+
+          $("#image-link1").attr("href", 'https://www.twitch.tv/' + streamerName1 + "");
+          $("#image-link2").attr("href", 'https://www.twitch.tv/' + streamerName2 + "");
+          $("#image-link3").attr("href", 'https://www.twitch.tv/' + streamerName3 + "");
+
+          $("#streamer-name-link1").attr("href", 'https://www.twitch.tv/' + streamerName1 + "");
+          $("#streamer-name-link2").attr("href", 'https://www.twitch.tv/' + streamerName2 + "");
+          $("#streamer-name-link3").attr("href", 'https://www.twitch.tv/' + streamerName3 + "");
+
+
         }
        });
 }
 
-
+ 
 
 //end functions=====================================================================================
 
@@ -89,6 +129,7 @@ function streamAjaxButtons(gameid) {
           $("#game1").on("click", function() {
             event.preventDefault();
             streamAjaxButtons(image1id);
+            console.log(image1id);
           });
 
           $("#game2").on("click", function() {
