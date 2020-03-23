@@ -160,6 +160,14 @@ function streamAjaxButtons(gameid) {
 
         }
        });
+
+
+
+
+       $("#submit").on("click", function(){
+       
+
+       })
    
 
        //Get top 3 most active streams on twitch for stream grid pre-user-search----------------------------------------------------
@@ -213,11 +221,15 @@ function streamAjaxButtons(gameid) {
    
        
        //Build url with search option-------------------------------------------------
+
+
        $("#submit").on("click", function(){
         event.preventDefault();
+        var userinput = $("#search").val().trim();
+        console.log(userinput);
       $.ajax({
          type: 'GET',
-         url: 'https://api.twitch.tv/kraken/search/games?query=call%20of%20duty',
+         url: 'https://api.twitch.tv/kraken/search/games?query=' + userinput + '',
          headers: {
            'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2',
            'Accept': 'application/vnd.twitchtv.v5+json'
@@ -227,13 +239,7 @@ function streamAjaxButtons(gameid) {
            gameImage1 = data.games[0].box.large;
            gameImage2 = data.games[1].box.large;
            gameImage3 = data.games[2].box.large;
-           gameImage4 = data.games[3].box.large;
-           gameImage5 = data.games[4].box.large;
-           gameImage6 = data.games[5].box.large;
-           console.log(gameImage1);
-           console.log(gameID);
-           console.log(data);
-           streamAjax();
+           streamAjaxButtons(gameID);
 
            
 
