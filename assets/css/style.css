@@ -15,7 +15,7 @@ body {
 }
 
 #top-games-header {
-    margin-left: 13px;
+    margin-bottom: 20px;
 }
 
 #t-table {
@@ -31,4 +31,12 @@ body {
 
 .streamer-name {
     color: black;
+}
+
+.stream-title {
+    font-size: 20px;
+}
+
+#top-streams-header {
+    margin-bottom: 20px;
 }
