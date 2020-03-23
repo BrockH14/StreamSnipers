@@ -159,6 +159,14 @@ function streamAjaxButtons(gameid) {
           $("#streamer-name1").text(streamerName1);
           $("#streamer-name2").text(streamerName2);
           $("#streamer-name3").text(streamerName3);
+
+          $("#image-link1").attr("href", 'https://www.twitch.tv/' + streamerName1 + "")
+          $("#image-link2").attr("href", 'https://www.twitch.tv/' + streamerName2 + "")
+          $("#image-link3").attr("href", 'https://www.twitch.tv/' + streamerName3 + "")
+
+          $("#streamer-name-link1").attr("href", 'https://www.twitch.tv/' + streamerName1 + "")
+          $("#streamer-name-link2").attr("href", 'https://www.twitch.tv/' + streamerName2 + "")
+          $("#streamer-name-link3").attr("href", 'https://www.twitch.tv/' + streamerName3 + "")
         }
        });
    
