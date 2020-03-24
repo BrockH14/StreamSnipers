@@ -1,5 +1,5 @@
 var gameID;
-var userinput;
+var userinput = "gaming";
 
 
 function streamAjax() {
@@ -261,3 +261,4 @@ function updateyoutube(){
     });
 
  });
+ updateyoutube();
