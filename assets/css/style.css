@@ -1,6 +1,8 @@
 body {
     /* background-image: url("../images/project1.2.jpg"); */
     background-size: 100%;
+    background-color: black;
+    color: blue;
 }
 
 .gameGrid {
@@ -47,5 +49,12 @@ iframe {
     height: 250px;
     margin-bottom: 20px;
 }
-
-
+.jumbotron {
+    background-color: black;
+}
+.container-fluid {
+    background-color: black;
+}
+.streamer-name {
+    color: blue;
+}
