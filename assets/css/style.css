@@ -24,17 +24,18 @@ body {
 
 .stream-thumbnail {
     width: 100%;
-    height: 150px;
+    height: 250px;
     margin-bottom: 20px;
     
 }
 
 .streamer-name {
     color: black;
+    font-size: 25px;
 }
 
 .stream-title {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #top-streams-header {
@@ -42,5 +43,8 @@ body {
 }
 
 iframe {
-    width: 100%;
+    width: 80%;
+    height: 250px
 }
+
+
