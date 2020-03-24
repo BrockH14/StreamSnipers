@@ -168,7 +168,7 @@ function updateyoutube(){
     type: 'GET',
     url: 'https://www.googleapis.com/youtube/v3/search',
     data: {
-        key: 'AIzaSyAqcWfiYqihUQTnDWfntvgulA7b61ZxIpg',
+        key: 'AIzaSyCEmTwOdquGwMpz9L3V_V_UO5RdqjJ_UBE',
         q: userinput,
         part: 'snippet',
         maxResults: 3,
