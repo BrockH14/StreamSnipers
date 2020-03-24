@@ -241,7 +241,7 @@ function updateyoutube(){
 
        $("#submit").on("click", function(){
         event.preventDefault();
-        var userinput = $("#search").val().trim();
+        userinput = $("#search").val().trim();
         console.log(userinput);
         updateyoutube();
       $.ajax({
