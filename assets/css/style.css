@@ -40,3 +40,7 @@ body {
 #top-streams-header {
     margin-bottom: 20px;
 }
+
+iframe {
+    width: 100%;
+}
