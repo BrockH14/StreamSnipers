@@ -54,6 +54,7 @@ iframe {
     margin-bottom: 20px;
 }
 
+<<<<<<< Updated upstream
 .modal-text {
     text-align: center;
 }
@@ -67,4 +68,27 @@ iframe {
     margin-top: 100px;
 }
 
+=======
+.zoomIn {
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: ;
+  }
+
+  .zoomInUp {
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
+    animation-iteration-count: ;
+  }
+
+  .btn {
+      background-color: cornflowerblue;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+  }
+
+  .btn:hover
+>>>>>>> Stashed changes
 
