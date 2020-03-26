@@ -263,8 +263,6 @@ function updateyoutube(){
             console.log("is a game");
             gameID = data.games[0]._id;
             gameImage1 = data.games[0].box.large;
-            gameImage2 = data.games[1].box.large;
-            gameImage3 = data.games[2].box.large;
             streamAjaxButtons(gameID);     
             updateyoutube();
           }
