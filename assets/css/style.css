@@ -54,4 +54,17 @@ iframe {
     margin-bottom: 20px;
 }
 
+.modal-text {
+    text-align: center;
+}
+
+.btn-modal {
+    margin: auto;
+
+}
+
+.modal {
+    margin-top: 100px;
+}
+
 

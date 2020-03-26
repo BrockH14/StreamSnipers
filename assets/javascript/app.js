@@ -70,7 +70,8 @@ function streamAjaxButtons(gameid) {
 //end functions=====================================================================================
 
   //popular twitch games load on page load----------------------------------------------------------
-    
+   
+
   $.ajax({
     type: 'GET',
     url: 'https://api.twitch.tv/helix/games/top',
@@ -168,7 +169,7 @@ function updateyoutube(){
     type: 'GET',
     url: 'https://www.googleapis.com/youtube/v3/search',
     data: {
-        key: 'AIzaSyCEmTwOdquGwMpz9L3V_V_UO5RdqjJ_UBE',
+        key: 'AIzaSyDMcuELyqtFzDeE0Kw5peWkU_HoYa1iYBE',
         q: userinput,
         part: 'snippet',
         maxResults: 3,
@@ -243,7 +244,8 @@ function updateyoutube(){
         event.preventDefault();
         userinput = $("#search").val().trim();
         console.log(userinput);
-        updateyoutube();
+      
+        
       $.ajax({
          type: 'GET',
          url: 'https://api.twitch.tv/kraken/search/games?query=' + userinput + '',
@@ -252,11 +254,22 @@ function updateyoutube(){
            'Accept': 'application/vnd.twitchtv.v5+json'
          },
          success: function(data) {
-           gameID = data.games[0]._id;
-           gameImage1 = data.games[0].box.large;
-           gameImage2 = data.games[1].box.large;
-           gameImage3 = data.games[2].box.large;
-           streamAjaxButtons(gameID);     
+          console.log(data);
+          if (data.games == null) {
+            $('#myModal').modal('show');
+            console.log("not a game")
+          }
+          else {
+            console.log("is a game");
+            gameID = data.games[0]._id;
+            gameImage1 = data.games[0].box.large;
+            gameImage2 = data.games[1].box.large;
+            gameImage3 = data.games[2].box.large;
+            streamAjaxButtons(gameID);     
+            updateyoutube();
+          }
+
+          
          }
     });
 
