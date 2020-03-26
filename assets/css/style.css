@@ -14,7 +14,9 @@ body {
     background-color: rgb(255, 255, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
+    padding: 0!important;
 }
+
 .gameGrid {
     margin-top: 20px;
     background-color: white;
