@@ -1,19 +1,20 @@
 body {
     background-image: url("../images/background3.jpg");
     background-size: 100%;
-   
-    
+
 }
 
 .jumbotron {
-    background-color: dodgerblue;
+    background-color: rgb(100, 65, 164);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
 }
 
 .container-fluid {
     background-color: rgb(255, 255, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
+    padding: 0 !important;
 }
 .gameGrid {
     margin-top: 20px;
@@ -98,7 +99,7 @@ iframe {
 }
 
 .gameGrid {
-    background-color: dodgerblue;
+    background-color: rgb(100, 65, 164);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
 }
