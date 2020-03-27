@@ -16,6 +16,7 @@ body {
     font-size: 30px;
     padding-right: 0 !important;
 }
+
 .gameGrid {
     margin-top: 20px;
     background-color: white;
@@ -89,7 +90,7 @@ iframe {
 }
 
 .btn {
-  background-color: rgb(100, 65, 164);
+    background-color: rgb(100, 65, 164);
   border: none;
   color: white;
   padding: 12px 16px;
