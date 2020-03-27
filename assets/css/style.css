@@ -14,7 +14,7 @@ body {
     background-color: rgb(255, 255, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
-    padding: 0 !important;
+    padding-right: 0 !important;
 }
 .gameGrid {
     margin-top: 20px;
@@ -69,11 +69,14 @@ iframe {
 
 .navbar {
     margin-bottom: 20px;
+    width: 100%;
+    
     
 }
 
 .modal-text {
     text-align: center;
+    color: black;
 }
 
 .btn-modal {
@@ -86,7 +89,7 @@ iframe {
 }
 
 .btn {
-    background-color: DodgerBlue;
+  background-color: rgb(100, 65, 164);
   border: none;
   color: white;
   padding: 12px 16px;
@@ -95,13 +98,22 @@ iframe {
 }
 
 .btn:hover {
-    background-color: RoyalBlue;
+    background-color: rgb(196, 48, 43);
+    color: white;
 }
 
 .gameGrid {
     background-color: rgb(100, 65, 164);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
+}
+
+#twitch {
+    color: rgb(100, 65, 164);
+}
+
+.fa-youtube {
+    color: rgb(196, 48, 43);
 }
 
 

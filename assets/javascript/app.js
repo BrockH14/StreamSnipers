@@ -15,6 +15,72 @@ function streamAjax() {
         }
        });
 }
+function gameAjaxGrid(gameID) {
+    
+  $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/helix/games?id=' + gameID + '',
+      headers: {
+        'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
+      },
+      success: function(data) {
+        console.log(data);
+        var gameName = data.data[0].name;
+        $(".stream-title").text(gameName);
+      }
+     });
+}
+
+
+function gameAjax1(gameID) {
+    
+  $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/helix/games?id=' + gameID + '',
+      headers: {
+        'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
+      },
+      success: function(data) {
+        console.log(data);
+        var gameName = data.data[0].name;
+        $("#stream-title1").text(gameName);
+      }
+     });
+}
+
+function gameAjax2(gameID) {
+    
+  $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/helix/games?id=' + gameID + '',
+      headers: {
+        'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
+      },
+      success: function(data) {
+        console.log(data);
+        var gameName2 = data.data[0].name;
+        $("#stream-title2").text(gameName2);
+
+      }
+     });
+}
+
+function gameAjax3(gameID) {
+    
+  $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/helix/games?id=' + gameID + '',
+      headers: {
+        'Client-ID': '5ax5wobie94supesi1p1pmhbweb5d2'
+      },
+      success: function(data) {
+        console.log(data);
+        var gameName3 = data.data[0].name;
+        $("#stream-title3").text(gameName3);
+      }
+     });
+}
+
 
 function streamAjaxButtons(gameid) {
   $.ajax({
@@ -30,9 +96,7 @@ function streamAjaxButtons(gameid) {
           var streamerThumbnail2 = data.data[1].thumbnail_url;
           var streamerThumbnail3 = data.data[2].thumbnail_url;
 
-          var streamTitle1 = data.data[0].title;
-          var streamTitle2 = data.data[1].title;
-          var streamTitle3 = data.data[2].title;
+          
 
           var streamerName1 = data.data[0].user_name;
           var streamerName2 = data.data[1].user_name;
@@ -46,9 +110,7 @@ function streamAjaxButtons(gameid) {
           $("#streamer-thumbnail2").attr("src", thumbnail2);
           $("#streamer-thumbnail3").attr("src", thumbnail3);
 
-          $("#stream-title1").text(streamTitle1);
-          $("#stream-title2").text(streamTitle2);
-          $("#stream-title3").text(streamTitle3);
+          
 
           $("#streamer-name1").text(streamerName1);
           $("#streamer-name2").text(streamerName2);
@@ -122,6 +184,8 @@ function streamAjaxButtons(gameid) {
 
       $("#game1").on("click", function() {
         event.preventDefault();
+        var name = data.data[0].name;
+        $(".stream-title").text(name);
         streamAjaxButtons(image1id);
         userinput = youtop1;
         updateyoutube();
@@ -129,6 +193,8 @@ function streamAjaxButtons(gameid) {
 
       $("#game2").on("click", function() {
         event.preventDefault();
+        var name2 = data.data[1].name;
+        $(".stream-title").text(name2);
         streamAjaxButtons(image2id);
         userinput = youtop2;
         updateyoutube();
@@ -136,6 +202,8 @@ function streamAjaxButtons(gameid) {
 
       $("#game3").on("click", function() {
         event.preventDefault();
+        var name3 = data.data[2].name;
+        $(".stream-title").text(name3);
         streamAjaxButtons(image3id);
         userinput = youtop3;
         updateyoutube();
@@ -143,6 +211,8 @@ function streamAjaxButtons(gameid) {
 
       $("#game4").on("click", function() {
         event.preventDefault();
+        var name4 = data.data[3].name;
+        $(".stream-title").text(name4);
         streamAjaxButtons(image4id);
         userinput = youtop4;
         updateyoutube();
@@ -150,6 +220,8 @@ function streamAjaxButtons(gameid) {
 
       $("#game5").on("click", function() {
         event.preventDefault();
+        var name5 = data.data[4].name;
+        $(".stream-title").text(name5);
         streamAjaxButtons(image5id);
         userinput = youtop5;
         updateyoutube();
@@ -157,12 +229,17 @@ function streamAjaxButtons(gameid) {
 
       $("#game6").on("click", function() {
         event.preventDefault();
+        var name6 = data.data[5].name;
+        $(".stream-title").text(name6);
         streamAjaxButtons(image6id);
         userinput = youtop6;
         updateyoutube();
       });
         }
        });
+
+
+
 
 function updateyoutube(){
   $.ajax({
@@ -207,6 +284,21 @@ function updateyoutube(){
           var streamTitle1 = data.data[0].title;
           var streamTitle2 = data.data[1].title;
           var streamTitle3 = data.data[2].title;
+
+          var gameID1 = data.data[0].game_id;
+          var gameID2 = data.data[1].game_id;
+          var gameID3 = data.data[2].game_id;
+
+          console.log(gameID1);
+          console.log(gameID2);
+          console.log(gameID3);
+
+          gameAjax1(gameID1);
+          gameAjax2(gameID2);
+          gameAjax3(gameID3);
+
+
+          
 
           var streamerName1 = data.data[0].user_name;
           var streamerName2 = data.data[1].user_name;
@@ -256,12 +348,13 @@ function updateyoutube(){
          success: function(data) {
           console.log(data);
           if (data.games == null) {
-            $('#myModal').modal('show');
+            $(".modal").modal("show");
             console.log("not a game")
           }
           else {
             console.log("is a game");
             gameID = data.games[0]._id;
+            gameAjaxGrid(gameID);
             gameImage1 = data.games[0].box.large;
             streamAjaxButtons(gameID);     
             updateyoutube();

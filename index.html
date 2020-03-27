@@ -26,6 +26,11 @@
 
 
     <body>
+
+      
+
+
+
         <div class="container">
             <div class="jumbotron">
                 <h1 class="animated zoomIn delay-2s text-center" id="heading">Stream Snipers</h1>
@@ -46,6 +51,9 @@
             </nav>
 
             
+    
+
+            
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
@@ -53,7 +61,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h1 id="top-streams-header">Top Streams on Twitch <i class="fab fa-twitch"></i></h1>
+                                    <h1 id="top-streams-header">Top Streams on Twitch <i id="twitch" class="fab fa-twitch"></i></h1>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +80,7 @@
                                     </a>
                                     <hr>
                                     <p>
-                                        <span class="stream-title" id="stream-title1"></span>
+                                       Playing: <span class="stream-title" id="stream-title1"></span>
                                         <br>
                                         <span class="stream-game" id="stream-game1"></span>
                                     </p>
@@ -94,7 +102,7 @@
                                     </a>
                                     <hr>
                                     <p>
-                                        <span class="stream-title" id="stream-title2"></span>
+                                       Playing: <span class="stream-title" id="stream-title2"></span>
                                         <br>
                                         <span class="stream-game" id="stream-game2"></span>
                                     </p>
@@ -116,7 +124,7 @@
                                     </a>
                                     <hr>
                                     <p>
-                                        <span class="stream-title" id="stream-title3"></span>
+                                        Playing: <span class="stream-title" id="stream-title3"></span>
                                         <br>
                                         <span class="stream-game" id="stream-game3"></span>
                                     </p>
@@ -169,7 +177,7 @@
             <div class="jumbotron gameGrid">
                 <div class="container">
                     <div class="row">
-                        <h1 id="top-games-header">Top Games on Twitch <i class="fab fa-twitch"></i></h1>
+                        <h1 id="top-games-header">Top Games on Twitch <i  class="fab fa-twitch"></i></h1>
                     </div>
                     <div class="row">
                         <div class="col-lg-2 col-sm-4 col-xs-6">
@@ -218,15 +226,15 @@
                 </div>
 
                 <!--------------------------------------------------------- Not a Game modal -------------------------------------------------------------------->
-
+              
                 <div id="myModal" class="modal" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title mr-auto ml-auto">Oops!</h5>
+                          <h5 class="modal-title modal-text mr-auto ml-auto">Oops!</h5>
                         </div>
                         <div class="modal-body">
-                          <p class="modal-text">Try searching for a game!</p>
+                          <p class="modal-text" class="modal-text">Try searching for a game!</p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-primary btn-modal mr-auto ml-auto" data-dismiss="modal">Okay!</button>
@@ -234,8 +242,11 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-
+                </div>
+               
+            
+    
+                
             </div>
 
 
