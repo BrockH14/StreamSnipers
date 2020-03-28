@@ -49,6 +49,7 @@ body {
     color: black;
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    white-space: initial;
 }
 
 .stream-title {
@@ -115,6 +116,10 @@ iframe {
 
 .fa-youtube {
     color: rgb(196, 48, 43);
+}
+
+.youtube {
+    color: white;
 }
 
 
